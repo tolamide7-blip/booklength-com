@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BookLength.com - Book Length Calculator | Publishing Measured | Austin, TX</title>
+<meta name="description" content="Free book length calculator, word count tools, spine size calculator for Austin authors. Publishing measured in Austin, TX.">
+<link rel="icon" href="images/logo.webp">
+<style>
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial; margin:0; color:#1a2b4a; background:#f8fafc}
+header{padding:16px 24px; display:flex; align-items:center; justify-content:space-between; background:white; border-bottom:1px solid #e2e8f0; position:sticky; top:0}
+header img{height:48px}
+.hero{max-width:1100px; margin:40px auto; padding:0 20px; display:grid; grid-template-columns:1.2fr 0.8fr; gap:24px; align-items:center}
+.card{background:white; border-radius:16px; padding:20px; box-shadow:0 4px 20px rgba(0,0,0,0.06)}
+h1{font-size:36px; line-height:1.1; margin:0 0 12px}
+.btn{background:#0f2a52; color:white; padding:12px 20px; border-radius:8px; text-decoration:none; display:inline-block; font-weight:600}
+.grid2{max-width:1100px; margin:20px auto; padding:0 20px; display:grid; grid-template-columns:1fr 1fr; gap:20px}
+@media(max-width:800px){.hero,.grid2{grid-template-columns:1fr}}
+img{max-width:100%; height:auto; border-radius:12px}
+footer{text-align:center; padding:30px; color:#64748b; font-size:14px}
+</style>
+</head>
+<body>
+<header>
+  <img src="images/logo.webp" alt="booklength.com">
+  <div style="font-weight:600; letter-spacing:0.1em; font-size:12px">PUBLISHING • MEASURED • AUSTIN, TX</div>
+</header>
+
+<section class="hero">
+  <div class="card">
+    <h1>How Long Is Your Book?<br>Measure It Accurately.</h1>
+    <p>Free tools for authors: word count, spine width, page count, and print specifications. Built for Austin writers and publishers worldwide.</p>
+    <a class="btn" href="#calculator">Open Word Count Calculator</a>
+    <p style="margin-top:12px; font-size:13px; color:#64748b">No signup. Runs in browser. AdSense-ready placeholders below.</p>
+    <img src="images/banner-words.webp" alt="Word Count 1,247 words" style="margin-top:16px">
+  </div>
+  <div>
+    <img src="images/spine-measure.webp" alt="Book spine measurement 4.5cm publishing process">
+    <div class="card" style="margin-top:16px">
+      <strong>Spine Size:</strong> 4.5cm calculated automatically for 6x9" trim<br>
+      <small>Editing • Publishing • Design • Author Guide • Marketing • Print Specs</small>
+    </div>
+  </div>
+</section>
+
+<section class="grid2">
+  <div class="card">
+    <h3>From Austin, TX to the World</h3>
+    <img src="images/austin-desk.webp" alt="Austin author desk with Capitol view">
+    <p style="font-size:14px; color:#475569; margin-top:10px">Keep Austin Weird — but your book measurements precise. Track Q1 Publishing: 6 titles, 6x9" trim, due March.</p>
+  </div>
+  <div class="card" id="calculator">
+    <h3>Word Count Calculator</h3>
+    <textarea id="text" style="width:100%; height:120px; border:1px solid #cbd5e1; border-radius:8px; padding:10px" placeholder="Paste your manuscript here..."></textarea>
+    <div style="margin-top:10px; display:flex; gap:8px; flex-wrap:wrap">
+      <span id="words" style="background:#e0f2fe; padding:6px 10px; border-radius:20px; font-size:13px">Words: 0</span>
+      <span id="chars" style="background:#fce7f3; padding:6px 10px; border-radius:20px; font-size:13px">Characters: 0</span>
+      <span id="pages" style="background:#fef3c7; padding:6px 10px; border-radius:20px; font-size:13px">Pages: 0</span>
+    </div>
+  </div>
+</section>
+
+<div style="max-width:1100px; margin:20px auto; padding:0 20px; display:grid; grid-template-columns:1fr 1fr; gap:20px">
+  <div style="background:#f1f5f9; border:2px dashed #cbd5e1; padding:20px; text-align:center; border-radius:12px; color:#94a3b8">Ad Placeholder 1 - AdSense will show here after approval</div>
+  <div style="background:#f1f5f9; border:2px dashed #cbd5e1; padding:20px; text-align:center; border-radius:12px; color:#94a3b8">Ad Placeholder 2</div>
+</div>
+
+<footer>© 2026 booklength.com • Publishing Measured • Austin, TX • <a href="/sitemap.xml">Sitemap</a> • <a href="/robots.txt">Robots</a></footer>
+
+<script>
+const ta=document.getElementById('text');
+const w=document.getElementById('words');
+const c=document.getElementById('chars');
+const p=document.getElementById('pages');
+ta.addEventListener('input',()=>{
+  const text=ta.value.trim();
+  const words=text? text.split(/\s+/).length:0;
+  const chars=text.length;
+  const pages=Math.ceil(words/250);
+  w.textContent='Words: '+words;
+  c.textContent='Characters: '+chars;
+  p.textContent='Pages: '+pages;
+});
+</script>
+</body>
+</html>
